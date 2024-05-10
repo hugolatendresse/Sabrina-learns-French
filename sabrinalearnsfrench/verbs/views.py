@@ -9,7 +9,7 @@ from .models import Verb
 # Create your views here.
 def index(request):
     verb_list = Verb.objects.order_by("?")[:3]
-    output =  "Today's verbs are:\n" + " \n ".join([v.francais for v in verb_list])
+    output =  "Today's verbs are:\n<b>" + "     \n      ".join([v.anglais + " / " + v.francais + "     ///////" for v in verb_list])
     return HttpResponse(output)
 
     # TODO
